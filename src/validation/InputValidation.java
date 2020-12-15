@@ -19,7 +19,6 @@ public class InputValidation {
     * @param prompt The string that is used to prompt the user for input
     * 
     * @return This method returns an integer
-    * 
     */
     public static int getInt(String prompt) 
     {
@@ -40,16 +39,28 @@ public class InputValidation {
         return i;
     }
     
-    // TODO: getInt(String prompt, int minInt, int maxInt)
+    
+    
+    
+    /**
+    * This method prompts the user to input an integer value within a certain range.
+    * 
+    * @param prompt The string that is used to prompt the user for input
+    * @param min The lowest acceptable integer
+    * @param max The highest acceptable integer
+    * 
+    * @return This method returns an integer within a specified range
+    */
     public static int getInt(String prompt, int min, int max) {
         int i = 0;
         boolean isValid = false;
         
         while (!isValid) {
             i = getInt(prompt);
-            if (i <= min || i >= max) {
+            if (i < min || i > max) {
                 System.out.println(
-                        "Error! Number must be greater than " + min + " and less than " + max + ".\n");
+                        "Error! Number must be greater than or equal to " + min 
+                                + " and less than or equal to " + max + ".\n");
             } else {
                 isValid = true;
             }
@@ -58,7 +69,39 @@ public class InputValidation {
         return i;
     }
     
+    
+    
+    
     // TODO: getSpecificInt(String prompt, int firstInt)
+    /**
+    * This method prompts the user to input an integer value that matches a 
+    * specific number.
+    * 
+    * @param prompt The string that is used to prompt the user for input
+    * @param firstInt The only acceptable answer.
+    * 
+    * @return This method returns a specified integer
+    */
+    public static int getSpecificInt(String prompt, int firstInt) {
+        int i = 0;
+        boolean isValid = false;
+        
+        while (!isValid) {
+            i = getInt(prompt);
+            if (i != firstInt) {
+                System.out.println(
+                        "Error! Number must be " + firstInt + ".\n");
+            } else {
+                isValid = true;
+            }
+        }
+        
+        return i;
+        
+    }
+    
+    
+    
     
     // TODO: getSpecificInt(String prompt, int firstInt, int secondInt) 
     
