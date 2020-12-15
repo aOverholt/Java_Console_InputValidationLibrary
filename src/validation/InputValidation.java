@@ -3,56 +3,68 @@ package validation;
 import java.util.Scanner;
 
 /**
- *
  * @author L. Andrew Overholt
  */
 public class InputValidation {
+    
+    private static Scanner sc = new Scanner(System.in);
     
     // *******************************************************************
     //   ********************     NUMBERS     **************************
     // *******************************************************************
     
-    // int
-    
    /**
     * This method prompts the user to input an integer value.
     * 
-    * @param sc Scanner
     * @param prompt The string that is used to prompt the user for input
     * 
     * @return This method returns an integer
     * 
     */
-    public static int getInt(Scanner sc, String prompt) 
+    public static int getInt(String prompt) 
     {
         int i = 0;
         boolean isValid = false;
-        while (isValid == false)
-        {
+        
+        while (isValid == false) {
             System.out.print(prompt);
-            if (sc.hasNextInt())
-            {
+            if (sc.hasNextInt()) {
                 i = sc.nextInt();
                 isValid = true;
-            }
-            else
-            {
-                System.out.println("Error! Invalid integer value. Try again.");
+            } else {
+                System.out.println("Error! You did not enter an integer. Try again.\n");
             }
             sc.nextLine();  // discard any other data entered on the line
         }
+        
         return i;
     }
     
-    // TODO: getIntWithinRange(Scanner sc, String prompt, int minInt, int maxInt)
+    // TODO: getInt(String prompt, int minInt, int maxInt)
+    public static int getInt(String prompt, int min, int max) {
+        int i = 0;
+        boolean isValid = false;
+        
+        while (!isValid) {
+            i = getInt(prompt);
+            if (i <= min || i >= max) {
+                System.out.println(
+                        "Error! Number must be greater than " + min + " and less than " + max + ".\n");
+            } else {
+                isValid = true;
+            }
+        }
+        
+        return i;
+    }
     
-    // TODO: getSpecificInt(Scanner sc, String prompt, int firstInt)
+    // TODO: getSpecificInt(String prompt, int firstInt)
     
-    // TODO: getSpecificInt(Scanner sc, String prompt, int firstInt, int secondInt) 
+    // TODO: getSpecificInt(String prompt, int firstInt, int secondInt) 
     
-    // TODO: getSpecificInt(Scanner sc, String prompt, int firstInt, int secondInt, int thirdInt) 
+    // TODO: getSpecificInt(String prompt, int firstInt, int secondInt, int thirdInt) 
     
-    // TODO: getSpecificInt(Scanner sc, String prompt, int firstInt, int secondInt, int thirdInt, int fourthInt) 
+    // TODO: getSpecificInt(String prompt, int firstInt, int secondInt, int thirdInt, int fourthInt) 
     
     
     
