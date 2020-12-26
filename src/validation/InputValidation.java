@@ -78,7 +78,30 @@ public class InputValidation {
     
     // **********************     DOUBLE     ****************************
     
-    // TODO: getDouble(String prompt)
+    /**
+    * This method prompts the user to input a double value.
+    * 
+    * @param prompt The string that is used to prompt the user for input
+    * 
+    * @return This method returns a double
+    */
+    public static double getDouble(String prompt) {
+        double d = 0;
+        boolean isValid = false;
+        
+        while (isValid == false) {
+            System.out.print(prompt);
+            if (sc.hasNextDouble()) {
+                d = sc.nextDouble();
+                isValid = true;
+            } else {
+                System.out.println("Error! You did not enter a Double. Try again.\n");
+            }
+            sc.nextLine();  // discard any other data entered on the line
+        }
+        
+        return d;
+    }
     
     // TODO: getDouble(String prompt, double minDouble, double maxDouble)
     
