@@ -29,11 +29,6 @@ public class Test
         aString = getStringSpecific("Enter password (abc123): ", "abc123");
         System.out.println("getStringSpecific(String prompt, String answer): PASSED!\n");
         */
-/*
-    
-        // 
-        
-        */
     }
 
 }
