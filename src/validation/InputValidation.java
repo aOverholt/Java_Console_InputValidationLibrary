@@ -13,6 +13,10 @@ public class InputValidation {
     //   ********************     NUMBERS     **************************
     // *******************************************************************
     
+    
+    
+    // *********************     INTEGERS     **************************
+    
    /**
     * This method prompts the user to input an integer value.
     * 
@@ -72,59 +76,20 @@ public class InputValidation {
     
     
     
-    // TODO: getSpecificInt(String prompt, int firstInt)
-    /**
-    * This method prompts the user to input an integer value that matches a 
-    * specific number.
-    * 
-    * @param prompt The string that is used to prompt the user for input
-    * @param firstInt The only acceptable answer.
-    * 
-    * @return This method returns a specified integer
-    */
-    public static int getSpecificInt(String prompt, int firstInt) {
-        int i = 0;
-        boolean isValid = false;
-        
-        while (!isValid) {
-            i = getInt(prompt);
-            if (i != firstInt) {
-                System.out.println(
-                        "Error! Number must be " + firstInt + ".\n");
-            } else {
-                isValid = true;
-            }
-        }
-        
-        return i;
-        
-    }
+    // **********************     DOUBLE     ****************************
     
+    // TODO: getDouble(String prompt)
     
-    
-    
-    // TODO: getSpecificInt(String prompt, int firstInt, int secondInt) 
-    
-    // TODO: getSpecificInt(String prompt, int firstInt, int secondInt, int thirdInt) 
-    
-    // TODO: getSpecificInt(String prompt, int firstInt, int secondInt, int thirdInt, int fourthInt) 
-    
-    
-    
-    // double
-    
-    // TODO: getDouble(Scanner sc, String prompt)
-    
-    // TODO: getDoubleWithinRange(Scanner sc, String prompt, double minDouble, double maxDouble)
+    // TODO: getDouble(String prompt, double minDouble, double maxDouble)
     
     
     // *******************************************************************
-    //   ********************     NUMBERS     **************************
+    //   ******************     NON-NUMBERS     ************************
     // *******************************************************************
     
-    // Char
+    // ***********************     CHAR     ****************************
     
-    // TODO: getChar(Scanner sc, String prompt)
+    // TODO: getChar(String prompt)
     
     // TODO: getSpecificChar(Scanner sc, String prompt, char firstChar)
     
@@ -136,16 +101,61 @@ public class InputValidation {
     
     
     
-    // String
+    // *********************     STRINGS     ***************************
     
-    // TODO: 
+    /**
+    * This method prompts the user to make an entry and then validates 
+    * whether they entered anything or not
+    * 
+    * @param prompt The string that is used to prompt the user for input
+    * 
+    * @return This method returns a String
+    */
+    public static String getString(String prompt) {
+        
+        String s = "";
+        boolean isValid = false;
+        
+        while (isValid == false) {
+            System.out.print(prompt);
+            if (sc.hasNext()) {
+                s = sc.next();
+                isValid = true;
+            } else {
+                System.out.println("Error! You did not enter anything! Try again.\n");
+            }
+            sc.nextLine();  // discard any other data entered on the line
+        }
+        
+        return s;
+    }
     
-    // TODO: 
     
-    // TODO: 
     
-    // TODO: 
     
-    // TODO: 
-    
+    /**
+    * This method prompts the user to input a specific string such as a password
+    * 
+    * @param prompt The string that is used to prompt the user for input
+    * @param answer The only acceptable answer.
+    * 
+    * @return This method returns a specified String
+    */
+    public static String getStringSpecific(String prompt, String answer) {
+        
+        String s = "";
+        boolean isValid = false;
+        
+        while (!isValid) {
+            s = getString(prompt);
+            if (s.equals(answer)) {
+                isValid = true;
+            } else {
+                System.out.println("Incorrect!\n");
+            }
+        }
+        
+        return s;
+        
+    }
 }
