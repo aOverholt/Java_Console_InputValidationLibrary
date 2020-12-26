@@ -9,8 +9,10 @@ public class Test
         // Variables
         int aInt;
         double aDouble;
+        char aChar;
         String aString;
         
+        /*
         // getInt(String prompt)
         aInt = getInt("Enter an Integer: ");
         System.out.println("getInt(String prompt): PASSED!\n");
@@ -19,16 +21,17 @@ public class Test
         aInt = getInt("Enter an Integer between 3 and 14: ", 3, 14);
         System.out.println("getInt(String prompt, int minInt, int maxInt): PASSED!\n");
         
-        // getSpecificInt(String prompt, int firstInt)
-        aInt = getSpecificInt("Enter an Integer(1): ", 1);
-        System.out.println("getSpecificInt(String prompt, int firstInt): PASSED!\n");
+        // getString(String prompt)
+        aString = getString("Enter a String: ");
+        System.out.println("getString(String prompt): PASSED!\n");
+       
+        // getStringSpecific(String prompt, String answer)
+        aString = getStringSpecific("Enter password (abc123): ", "abc123");
+        System.out.println("getStringSpecific(String prompt, String answer): PASSED!\n");
+        */
 /*
     
-        // getSpecificInt(String prompt, int firstInt, int secondInt) 
-
-        // getSpecificInt(String prompt, int firstInt, int secondInt, int thirdInt) 
-
-        // getSpecificInt(String prompt, int firstInt, int secondInt, int thirdInt, int fourthInt) 
+        // 
         
         */
     }
