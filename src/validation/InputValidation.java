@@ -14,7 +14,6 @@ public class InputValidation {
     // *******************************************************************
     
     
-    
     // *********************     INTEGERS     **************************
     
    /**
@@ -42,8 +41,6 @@ public class InputValidation {
         
         return i;
     }
-    
-    
     
     
     /**
@@ -75,7 +72,6 @@ public class InputValidation {
     
     
     
-    
     // **********************     DOUBLE     ****************************
     
     /**
@@ -103,7 +99,36 @@ public class InputValidation {
         return d;
     }
     
-    // TODO: getDouble(String prompt, double minDouble, double maxDouble)
+    
+    /**
+    * This method prompts the user to input a double value within a certain range.
+    * 
+    * @param prompt The string that is used to prompt the user for input
+    * @param min The lowest acceptable value
+    * @param max The highest acceptable value
+    * 
+    * @return This method returns an double within a specified range
+    */
+    public static double getDouble(String prompt, double min, double max) {
+        double d = 0;
+        boolean isValid = false;
+        
+        while (!isValid) {
+            d = getDouble(prompt);
+            if (d < min || d > max) {
+                System.out.println(
+                        "Error! Number must be greater than or equal to " + min 
+                                + " and less than or equal to " + max + ".\n");
+            } else {
+                isValid = true;
+            }
+        }
+        
+        return d;
+    }
+    
+    
+    
     
     
     // *******************************************************************
@@ -152,8 +177,6 @@ public class InputValidation {
         
         return s;
     }
-    
-    
     
     
     /**
