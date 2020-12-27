@@ -137,7 +137,30 @@ public class InputValidation {
     
     // ***********************     CHAR     ****************************
     
-    // TODO: getChar(String prompt)
+    /**
+    * This method prompts the user to make an entry and then validates 
+    * whether they entered a char
+    * 
+    * @param prompt The string that is used to prompt the user for input
+    * 
+    * @return This method returns a char
+    */
+    public static char getChar(String prompt) {
+        char c = 0;
+        boolean isValid = false;
+        
+        while (!isValid) {
+            System.out.print(prompt);
+            if (sc.hasNext()) {
+                c = sc.next().trim().charAt(0);
+                isValid = true;
+            } else {
+                System.out.println("Error! You must enter a character!\n");
+            }
+        }
+        
+        return c;
+    }
     
     // TODO: getSpecificChar(Scanner sc, String prompt, char firstChar)
     
