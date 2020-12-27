@@ -1,7 +1,6 @@
 package validation;
 
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 /**
  * @author L. Andrew Overholt
@@ -188,8 +187,34 @@ public class InputValidation {
         return c;
     }
     
-    // TODO: getSpecificChar(Scanner sc, String prompt, char firstChar, char secondChar, char thirdChar, char fourthChar)
     
+    /**
+    * This method prompts the user to enter a character and then 
+    * after verifying that they entered a char, the method returns it
+    * 
+    * @param prompt The string that is used to prompt the user for input
+    * @param char1 One of the acceptable characters
+    * @param char2 One of the acceptable characters
+    * @param char3 One of the acceptable characters
+    * @param char4 One of the acceptable characters
+    * 
+    * @return This method returns a specific char of 4 options
+    */
+    public static char getCharSpecific(String prompt, char char1, char char2, char char3, char char4) {
+        char c = 0;
+        boolean isValid = false;
+        
+        while (!isValid) {
+            c = getChar(prompt);
+            if (c == char1 || c == char2 || c == char3 || c == char4) {
+                isValid = true;
+            } else {
+                System.out.println("Error! That is not an acceptable answer. Please try again!\n");
+            }
+        }
+        
+        return c;
+    }
     
     
     // *********************     STRINGS     ***************************
