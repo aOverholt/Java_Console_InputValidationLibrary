@@ -40,6 +40,10 @@ public class Test
         // getChar(String prompt)
         aChar = getChar("Enter a char: ");
         System.out.println("getChar(String prompt): PASSED!\n");
+        
+        // getAlphabeticChar(String prompt)
+        aChar = getAlphabeticChar("Enter a letter: ");
+        System.out.println("getAlphabeticChar(String prompt): PASSED!\n");
         */
         
     }
