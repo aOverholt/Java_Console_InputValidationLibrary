@@ -4,6 +4,7 @@ import static validation.InputValidation.*;
 
 public class Test
 {
+    /*
     public static void main(String[] args)
     {
         // Variables
@@ -12,7 +13,6 @@ public class Test
         char aChar;
         String aString;
         
-        /*
         // getInt(String prompt)
         aInt = getInt("Enter an Integer: ");
         System.out.println("getInt(String prompt): PASSED!\n");
@@ -44,8 +44,12 @@ public class Test
         // getAlphabeticChar(String prompt)
         aChar = getAlphabeticChar("Enter a letter: ");
         System.out.println("getAlphabeticChar(String prompt): PASSED!\n");
-        */
         
-    }
+        // getSpecificChar(String prompt, char char1, char char2, char char3, char char4)
+        aChar = getCharSpecific("Enter one of these letters only (a, b, c, d): ", 'a','b','c','d');
+        System.out.println("getAlphabeticChar(String prompt): PASSED!\n");
+        
+    } // end Main Method
+    */
 
 }
