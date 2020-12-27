@@ -28,11 +28,15 @@ public class Test
         // getStringSpecific(String prompt, String answer)
         aString = getStringSpecific("Enter password (abc123): ", "abc123");
         System.out.println("getStringSpecific(String prompt, String answer): PASSED!\n");
-        */
         
         // getDouble(String prompt)
         aDouble = getDouble("Enter a Double value: ");
         System.out.println("getDouble(String prompt): PASSED!\n");
+        
+        // getDouble(String prompt, double minDouble, double maxDouble)
+        aDouble = getDouble("Enter a double from 3.1 and 4.9: ", 3.1, 4.9);
+        System.out.println("getDouble(String prompt, double minDouble, double maxDouble): PASSED!\n");
+        */
         
     }
 
