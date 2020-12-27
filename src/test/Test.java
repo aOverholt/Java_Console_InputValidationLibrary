@@ -36,6 +36,10 @@ public class Test
         // getDouble(String prompt, double minDouble, double maxDouble)
         aDouble = getDouble("Enter a double from 3.1 and 4.9: ", 3.1, 4.9);
         System.out.println("getDouble(String prompt, double minDouble, double maxDouble): PASSED!\n");
+        
+        // getChar(String prompt)
+        aChar = getChar("Enter a char: ");
+        System.out.println("getChar(String prompt): PASSED!\n");
         */
         
     }
