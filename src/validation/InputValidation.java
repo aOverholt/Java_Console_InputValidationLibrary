@@ -1,6 +1,7 @@
 package validation;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /**
  * @author L. Andrew Overholt
@@ -162,11 +163,30 @@ public class InputValidation {
         return c;
     }
     
-    // TODO: getSpecificChar(Scanner sc, String prompt, char firstChar)
     
-    // TODO: getSpecificChar(Scanner sc, String prompt, char firstChar, char secondChar)
-    
-    // TODO: getSpecificChar(Scanner sc, String prompt, char firstChar, char secondChar, char thirdChar)
+    /**
+    * This method prompts the user to enter an alphabetic char and then 
+    * after verifying its a char, it returns it
+    * 
+    * @param prompt The string that is used to prompt the user for input
+    * 
+    * @return This method returns a char
+    */
+    public static char getAlphabeticChar(String prompt) {
+        char c = 0;
+        boolean isValid = false;
+        
+        while (!isValid) {
+            c = getChar(prompt);
+            if (Character.isLetter(c)) {
+                isValid = true;
+            } else {
+                System.out.println("Error! You must enter an alphabetic character.\n");
+            }
+        }
+        
+        return c;
+    }
     
     // TODO: getSpecificChar(Scanner sc, String prompt, char firstChar, char secondChar, char thirdChar, char fourthChar)
     
