@@ -1,2 +1,2 @@
 # java-console
-A living, breathing example of my java console skills
+A library of methods to validate user input in a Java Console Application
